@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/alifa/Desktop/Projects/University Lab Assignments/PF Lab/[Project] Personal Diary Management System/header.h
+
+C:/Users/alifa/Desktop/Projects/University Lab Assignments/PF Lab/[Project] Personal Diary Management System/main.c
+stdio.h
+-
+stdlib.h
+-
+header.h
+C:/Users/alifa/Desktop/Projects/University Lab Assignments/PF Lab/[Project] Personal Diary Management System/header.h
+
