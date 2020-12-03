@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "header.h"
 
-int main() {
+void addEntry() {
 
     system("cls");
     printf("\n \n \n \n \n");
@@ -11,10 +11,10 @@ int main() {
     printf("\n \t \t ************************************************************************** \n");
     printf("\n \n \n \n \n");
 
-    printf("\t \t Add New Entry \t \t [1] \n");
-    printf("\t \t View Added Entry \t [2] \n");
-    printf("\t \t Delete Added Entry \t [3] \n");
-    printf("\n \t \t Exit \t \t \t [0] \n");
+    printf("\t \t What Do You Want To Add: \n \n");
+
+    printf("\t \t Appointment \t \t [1] \n");
+    printf("\t \t Note \t \t \t [2] \n");
 
     int choice;
     printf("\n \n \t \t Select What You Want To Do: ");
@@ -22,28 +22,15 @@ int main() {
 
     if (choice == 1)
     {
-        addEntry();
+        appointment();
     }
     else if (choice == 2)
     {
-        printf("View Added Entry");
-        // TODO: Add View Added Entry function here
-    }
-    else if (choice == 3)
-    {
-        printf("Delete Added Entry");
-        // TODO: Add Delete Added Entry function here
+        note();
     }
     else
     {
-        printf("Please Select From The List");
+        printf("\n \n \t \t PLEASE SELECT EITHER [1] OR [2] \n \n \n");
     }
 
-
-
-
-
-
-
-    return 0;
 }
