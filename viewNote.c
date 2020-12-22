@@ -8,11 +8,11 @@ void viewNote(){
 
     fp = fopen("note.txt", "r");
 
-    if (fp == NULL) {
-        printf("\t \t \t No note entries exist");
-    }
-
     system("cls");
+
+    if (fp == NULL) {
+        printf("\nNo note entries exist");
+    }
 
     c = fgetc(fp);
     while (c != EOF)
