@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "header.h"
 
-void addEntry() {
+void deleteEntry() {
 
     system("cls");
     printf("\n \n \n \n \n");
@@ -11,7 +11,7 @@ void addEntry() {
     printf("\n \t \t ************************************************************************** \n");
     printf("\n \n \n \n \n");
 
-    printf("\t \t What Do You Want To Add: \n \n");
+    printf("\t \t What Do You Want To Delete: \n \n");
 
     printf("\t \t Appointment \t \t [1] \n");
     printf("\t \t Note \t \t \t [2] \n \n");
@@ -23,10 +23,10 @@ void addEntry() {
 
     switch (choice) {
         case 1:
-            appointment();
+            deleteAppointment();
             break;
         case 2:
-            note();
+            deleteNote();
             break;
         case 0:
             main();

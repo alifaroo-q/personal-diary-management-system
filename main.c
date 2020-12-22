@@ -1,9 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 #include "header.h"
+
+void remove_scrollbar()
+{
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    GetConsoleScreenBufferInfo(handle, &info);
+    COORD new_size =
+            {
+                    info.srWindow.Right - info.srWindow.Left + 1,
+                    info.srWindow.Bottom - info.srWindow.Top + 1
+            };
+    SetConsoleScreenBufferSize(handle, new_size);
+}
 
 int main() {
 
+    remove_scrollbar();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN|BACKGROUND_INTENSITY);
     system("cls");
     printf("\n \n \n \n \n");
     printf("\t \t ************************************************************************** \n \n");
@@ -18,32 +34,24 @@ int main() {
 
     int choice;
     printf("\n \n \t \t Select What You Want To Do: ");
-    scanf_s("%d", &choice);
+    scanf("%d", &choice);
 
-    if (choice == 1)
-    {
-        addEntry();
+    switch (choice) {
+        case 1:
+            addEntry();
+            break;
+        case 2:
+            viewEntry();
+            break;
+        case 3:
+            deleteEntry();
+            break;
+        case 0:
+            system("taskkill /im cmd.exe /f /t");
+        default:
+            printf("Please Select From The List");
+
     }
-    else if (choice == 2)
-    {
-        printf("View Added Entry");
-        // TODO: Add View Added Entry function here
-    }
-    else if (choice == 3)
-    {
-        printf("Delete Added Entry");
-        // TODO: Add Delete Added Entry function here
-    }
-    else
-    {
-        printf("Please Select From The List");
-    }
-
-
-
-
-
-
 
     return 0;
 }

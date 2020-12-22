@@ -1,3 +1,10 @@
+extern int main(void);
 extern void addEntry(void);
 extern void appointment(void);
 extern void note(void);
+extern void viewEntry(void);
+extern void viewAppointment(void);
+extern void viewNote(void);
+extern void deleteEntry(void);
+extern void deleteNote(void);
+extern void deleteAppointment();

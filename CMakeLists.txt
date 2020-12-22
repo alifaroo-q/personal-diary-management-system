@@ -1,2 +1,2 @@
 project(personal-diary-management-system)
-add_executable(personal-diary-management-system main.c header.h)
+add_executable(personal-diary-management-system main.c header.h addEntry.c appointment.c note.c viewEntry.c viewAppoinment.c viewNote.c deleteEntry.c deleteNote.c deleteAppointment.c)

@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "header.h"
+
+void deleteAppointment (){
+
+     int choice;
+     FILE * fp;
+
+    system("cls");
+
+    printf("\n \n \n \n \n");
+    printf("\t \t ************************************************************************** \n \n");
+    printf("\t \t ******************** Personal Diary Managements System ******************* \n");
+    printf("\n \t \t ************************************************************************** \n");
+    printf("\t \t ************************ Appointment Delete Section ********************** \n");
+    printf("\n \n \n \n \n");
+
+
+    printf("\t \t Do you really want to delete appointments: \n\n");
+    printf("\t \t Yes delete the appointments \t \t [1]\n");
+    printf("\t \t No do not delete the appointments \t [2]\n\n");
+    printf("\n\t\t What do you want: ");
+    scanf(" %d", &choice);
+
+
+
+    fp = fopen("appointment.txt", "r");
+
+    if (fp == NULL){
+        printf("\t \t The File does not exits\n");
+        fclose(fp);
+    }
+    else {
+        switch (choice) {
+            case 1:
+                fclose(fp);
+                remove("appointment.txt");
+                main();
+            case 2:
+                main();
+                break;
+            default:
+                printf("Select the correct option");
+
+        }
+    }
+
+}
